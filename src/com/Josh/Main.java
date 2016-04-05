@@ -7,7 +7,7 @@ package com.Josh;
         import java.awt.event.ActionListener;
         import java.awt.event.KeyEvent;
         import java.awt.event.KeyListener;
-
+        import java.awt.color.*;
 
 //TODO have paddle speed affect ball's direction
 //TODO known issue - sometimes ball gets stuck behind human paddle
@@ -61,12 +61,16 @@ public class Main {
             //System.out.println("* Repaint *");
 
             if (gameOver == true) {
-                g.drawString( "Game over!", 20, 30 );
+                //g.setColor(Color.red);
+                g.setColor(Color.red);g.drawString( "Game over!", 20, 30 );
+                g.setColor(Color.black);
                 return;
             }
 
             if (removeInstructions == false ) {
+                g.setColor(Color.cyan);
                 g.drawString("Pong! Press up or down to move", 20, 30);
+                g.setColor(Color.black);
                 g.drawString("Press q to quit", 20, 60);
             }
 
